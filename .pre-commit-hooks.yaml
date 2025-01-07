@@ -1,5 +1,5 @@
 - id: remove-emoji-from-codebase
   name: Remove Emojis from codebase
-  entry: python remove_emojis.py
+  entry: python remove_emoji.py
   language: python
   types: [text]
