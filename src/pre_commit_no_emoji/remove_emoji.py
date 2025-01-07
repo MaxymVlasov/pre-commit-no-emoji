@@ -56,21 +56,21 @@ def remove_emojis_from_file(file_path: str) -> ReturnCode:
 
     return ReturnCode.OK
 
-def main() -> ReturnCodeType:
+def invoke_cli_app(files: list[str]) -> ReturnCodeType:
     """
     Main function to remove emojis from files specified in command line arguments.
+
+    Args:
+        files: The list of file paths from which emojis should be removed
 
     Returns:
         int: The exit code of the hook.
     """
     result: ReturnCodeType = ReturnCode.OK
-    for file_path in sys.argv[1:]:
+    for file_path in files:
         file_result = remove_emojis_from_file(file_path)
         if file_result != ReturnCode.OK:
             result = file_result
 
 
     return result
-
-if __name__ == "__main__":
-    main()
