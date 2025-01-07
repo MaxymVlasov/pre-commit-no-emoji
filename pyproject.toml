@@ -1,12 +1,12 @@
 [build-system]
 requires = [
   'hatchling',
+  'hatch-vcs',  # setuptools-scm
 ]
 build-backend = 'hatchling.build'
 
 [project]
 name = 'pre-commit-no-emoji'
-version = '1.0.0'
 
 classifiers = [
   'License :: OSI Approved :: MIT License',
@@ -17,7 +17,10 @@ classifiers = [
 ]
 description='Pre-commit hooks for deal with Emoji'
 dependencies = []
-
+dynamic = [
+  'urls',
+  'version',
+]
 
 [[project.authors]]
 name = 'Maksym Vlasov'
@@ -25,6 +28,3 @@ name = 'Maksym Vlasov'
 [project.readme]
 file = 'README.md'
 content-type = 'text/markdown'
-
-[project.scripts]
-remove_emoji = 'remove_emoji:main'

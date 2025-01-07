@@ -1,9 +1,16 @@
 [build.targets.sdist]
 include = [
-  '*.py',
+  'src/',
 ]
 
 [build.targets.wheel]
 packages = [
-  '.',
+  'src/pre_commit_no_emoji/',
 ]
+
+[metadata.hooks.vcs.urls]
+'Source Archive' = 'https://github.com/MaxymVlasov/pre-commit-no-emoji/archive/{commit_hash}.tar.gz'
+'GitHub: repo' = 'https://github.com/MaxymVlasov/pre-commit-no-emoji'
+
+[version]
+source = 'vcs'
