@@ -19,7 +19,6 @@ class ReturnCode(IntEnum):
 ReturnCodeType: TypeAlias = ReturnCode | int
 
 
-
 EMOJI_PATTERN: Pattern[str] = re.compile(
     "["
     "\U0001F600-\U0001F64F"  # emoticons
@@ -42,7 +41,7 @@ def remove_emojis_from_file(file_path: str) -> ReturnCode:
         file_path (str): The path to the file from which emojis should be removed.
 
     Returns:
-        ReturnCode: An enum value indicating the result of the operation.
+        ReturnCode: The exit code of the hook.
     """
     with open(file_path, "r", encoding="utf-8") as file:
         content: str = file.read()
@@ -60,6 +59,9 @@ def remove_emojis_from_file(file_path: str) -> ReturnCode:
 def main() -> ReturnCodeType:
     """
     Main function to remove emojis from files specified in command line arguments.
+
+    Returns:
+        int: The exit code of the hook.
     """
     result: ReturnCodeType = ReturnCode.OK
     for file_path in sys.argv[1:]:
