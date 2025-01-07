@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+  'hatchling',
+]
+build-backend = 'hatchling.build'
+
+[project]
+name = 'pre-commit-no-emoji'
+version = '1.0.0'
+
+classifiers = [
+  'License :: OSI Approved :: MIT License',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: Implementation :: CPython',
+  'Programming Language :: Python :: Implementation :: PyPy',
+]
+description='Pre-commit hooks for deal with Emoji'
+dependencies = []
+
+
+[[project.authors]]
+name = 'Maksym Vlasov'
+
+[project.readme]
+file = 'README.md'
+content-type = 'text/markdown'
+
+[project.scripts]
+remove_emoji = 'remove_emoji:main'
