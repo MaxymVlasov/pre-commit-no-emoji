@@ -1,0 +1,9 @@
+[build.targets.sdist]
+include = [
+  '*.py',
+]
+
+[build.targets.wheel]
+packages = [
+  '.',
+]
